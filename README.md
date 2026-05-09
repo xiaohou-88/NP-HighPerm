@@ -200,7 +200,7 @@ If needed, modify the following paths inside `test.py`:
 
 ```python
 TEST_CSV = "all_data_split/folds/fold_1_test.csv"
-MODEL_WEIGHTS = "new_result/01weight_best_result/fold_1/best_model.pth"
+MODEL_WEIGHTS = "new_result/best_result/fold_1/best_model.pth"
 ```
 
 The testing script loads the test dataset, initializes the model, loads the saved model weights, and reports the evaluation metrics.
@@ -212,23 +212,23 @@ The testing script loads the test dataset, initializes the model, loads the save
 The main experimental results are stored in:
 
 ```text
-new_result/01weight_best_result/
+new_result/best_result/
 ```
 
 The average five-fold results are provided in:
 
 ```text
-new_result/01weight_best_result/average_results.csv
+new_result/best_result/average_results.csv
 ```
 
 Fold-specific results are stored in:
 
 ```text
-new_result/01weight_best_result/fold_1/
-new_result/01weight_best_result/fold_2/
-new_result/01weight_best_result/fold_3/
-new_result/01weight_best_result/fold_4/
-new_result/01weight_best_result/fold_5/
+new_result/best_result/fold_1/
+new_result/best_result/fold_2/
+new_result/best_result/fold_3/
+new_result/best_result/fold_4/
+new_result/best_result/fold_5/
 ```
 
 Each fold directory may contain:
