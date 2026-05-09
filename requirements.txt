@@ -1,11 +1,29 @@
-numpy
-pandas
-scipy
-scikit-learn
-matplotlib
-seaborn
-tqdm
-torch
-umap-learn
-networkx
-rdkit
+# Core scientific computing
+numpy==2.1.2
+pandas==2.2.3
+scipy==1.15.3
+scikit-learn==1.7.2
+
+# Deep learning
+torch==2.5.1
+torch-geometric==2.6.1
+
+# Cheminformatics
+rdkit==2024.9.2
+
+# Visualization and analysis
+matplotlib==3.9.2
+seaborn==0.13.2
+umap-learn==0.5.9.post2
+networkx==3.4.2
+
+# Utilities
+tqdm==4.66.6
+requests==2.32.3
+joblib==1.5.2
+numba==0.63.1
+pynndescent==0.5.13
+
+# Optional logging / monitoring
+tensorboard==2.18.0
+tensorboardX==2.6.2.2
