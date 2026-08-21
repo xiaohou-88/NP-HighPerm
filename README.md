@@ -19,7 +19,7 @@ NP-HighPerm addresses these challenges through:
   - Molecular graph encoding
 
 - **Assay-aware fusion**
-  - PAMPA and Caco-2 assay information is used as contextual input to recalibrate modality contributions.
+  - PAMPA and Caco-2 assay information is incorporated as contextual information to learn assay-conditioned modality contributions.
 
 - **Dual-task learning**
   - Continuous permeability regression
@@ -39,24 +39,18 @@ NP-HighPerm addresses these challenges through:
 NP-HighPerm/
 ├── all_data_split/
 │   └── folds/
-│       ├── fold_1_train.csv
-│       ├── fold_1_test.csv
-│       ├── fold_2_train.csv
-│       ├── fold_2_test.csv
-│       ├── fold_3_train.csv
-│       ├── fold_3_test.csv
-│       ├── fold_4_train.csv
-│       ├── fold_4_test.csv
-│       ├── fold_5_train.csv
-│       └── fold_5_test.csv
+│
+├── split/
+│   └── scaffold_split.py
+│   └── folds/
+│
+├── visualization/
+│   ├── attention_visualization.py
+│   ├── umap_visualization.py
+│   └── scatter_plot.py
+│
 ├── new_result/
-│   └── best_result/
-│       ├── average_results.csv
-│       ├── fold_1/
-│       ├── fold_2/
-│       ├── fold_3/
-│       ├── fold_4/
-│       └── fold_5/
+│
 ├── feature_engineering.py
 ├── main.py
 ├── metrics.py
