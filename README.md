@@ -2,8 +2,7 @@
 
 **NP-HighPerm** is an assay-aware multimodal learning framework for predicting membrane permeability of nonpeptidic macrocycles (NPMs). The model integrates complementary molecular representations, including molecular fingerprints, SMILES-derived sequence representations, molecular graph features, and assay-context information for continuous permeability prediction and permeability classification.
 
-> **Note**  
-> This repository is a research release for the NP-HighPerm project. It provides curated five-fold data splits, feature engineering scripts, training/evaluation pipelines, metric calculation utilities, selected model-related files, and experimental results for reproducible permeability prediction studies.
+
 
 ---
 
