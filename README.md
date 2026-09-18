@@ -1,35 +1,35 @@
 # NP-HighPerm
 
-**NP-HighPerm** is an assay-aware multimodal dual-task framework for predicting the membrane permeability of nonpeptidic macrocycles (NPMs). The model integrates molecular fingerprints, SMILES-derived sequence representations, molecular graph features, and assay-context information to support both continuous permeability regression and binary permeability classification.
+**NP-HighPerm** is an assay-aware multimodal learning framework for predicting membrane permeability of nonpeptidic macrocycles (NPMs). The model integrates complementary molecular representations, including molecular fingerprints, SMILES-derived sequence representations, molecular graph features, and assay-context information for continuous permeability prediction and permeability classification.
 
 > **Note**  
-> This repository is a research release for the NP-HighPerm project. It provides curated data splits, feature engineering scripts, training/evaluation scripts, evaluation metrics, selected model-related files, and experimental results.
+> This repository is a research release for the NP-HighPerm project. It provides curated five-fold data splits, feature engineering scripts, training/evaluation pipelines, metric calculation utilities, selected model-related files, and experimental results for reproducible permeability prediction studies.
 
 ---
 
 ## Overview
 
-Nonpeptidic macrocycles occupy the beyond-rule-of-five chemical space and are promising scaffolds for difficult-to-drug intracellular targets. However, their membrane permeability is difficult to model because experimental measurements are often collected from heterogeneous assays and continuous permeability labels are unevenly distributed.
+Nonpeptidic macrocycles (NPMs) represent an important chemical space beyond traditional rule-of-five boundaries and provide promising scaffolds for challenging therapeutic targets. However, predicting their membrane permeability remains difficult because experimental measurements are collected from different permeability assays and often exhibit heterogeneous distributions.
 
-NP-HighPerm addresses these challenges through:
+NP-HighPerm provides a multimodal learning framework that combines:
 
 - **Multimodal molecular representation**
-  - Morgan and MACCS fingerprints
-  - SMILES sequence encoding
-  - Molecular graph encoding
+  - Morgan fingerprints and MACCS keys
+  - SMILES-based sequence representation using Transformer encoding
+  - Molecular graph representation using graph neural networks
 
-- **Assay-aware fusion**
-  - PAMPA and Caco-2 assay information is incorporated as contextual information to learn assay-conditioned modality contributions.
+- **Assay-aware learning**
+  - Permeability assay information, including PAMPA and Caco-2 contexts, is incorporated as auxiliary contextual information to model assay-dependent variations.
 
-- **Dual-task learning**
+- **Joint regression and classification learning**
   - Continuous permeability regression
-  - Binary permeability classification using a practical permeability threshold
+  - Binary permeability classification using a predefined permeability threshold
 
-- **Robust evaluation**
+- **Validation-controlled evaluation**
   - Five-fold cross-validation
-  - Fold-wise prediction results
-  - ROC and PR analysis
-  - Subgroup robustness analysis
+  - Training/validation/test evaluation protocol
+  - Independent test evaluation using the checkpoint selected by validation performance
+  - Subgroup robustness analysis and prediction visualization
 
 ---
 
@@ -41,7 +41,7 @@ NP-HighPerm/
 │   └── folds/
 │
 ├── split/
-│   └── scaffold_split.py
+│   ├── scaffold_split.py
 │   └── folds/
 │
 ├── visualization/
@@ -149,7 +149,7 @@ The graph branch constructs molecular graphs and encodes atom-level connectivity
 
 The assay type, such as PAMPA or Caco-2, is used as contextual information to dynamically adjust the contribution of each molecular modality.
 
-### 5. Dual-task prediction
+### 5. Joint prediction objectives
 
 The final prediction head jointly performs:
 
@@ -294,22 +294,6 @@ python test.py
 
 ```text
 new_result/best_result/
-```
-
----
-
-## Citation
-
-If you use this repository or the NP-HighPerm results in your research, please cite:
-
-```bibtex
-@article{hou2026nphighperm,
-  title={NP-HighPerm: An Assay-Aware Multimodal Dual-Task Framework for Nonpeptidic Macrocycle Membrane Permeability Prediction},
-  author={},
-  journal={Journal Name},
-  year={2026},
-  note={Manuscript in preparation}
-}
 ```
 
 ---
