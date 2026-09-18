@@ -178,11 +178,11 @@ def run_cross_validation(
     pd.DataFrame(fold_summaries).to_csv(os.path.join(main_result_dir, "fold_summary.csv"), index=False)
     pd.DataFrame([summary_metrics]).to_csv(os.path.join(main_result_dir, "average_results.csv"), index=False)
 
-    print("\n=== 5-fold final test mean +/- SD ===")
+    print("\n=== 5-fold final test mean ± SD ===")
     for metric in METRIC_COLUMNS:
         mean = summary_metrics[f"{metric}_mean"]
         std = summary_metrics[f"{metric}_std"]
-        print(f"{metric}: {mean:.4f} +/- {std:.4f}")
+        print(f"{metric}: {mean:.4f} ± {std:.4f}")
 
     return summary_metrics
 
