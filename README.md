@@ -255,22 +255,6 @@ Classification performance is evaluated using:
 
 ---
 
-## Representative Performance
-
-The representative five-fold cross-validation performance of NP-HighPerm is:
-
-| Metric | Performance |
-|---|---:|
-| MSE | 0.2387 ± 0.0163 |
-| RMSE | 0.4884 ± 0.0167 |
-| R² | 0.6623 ± 0.0239 |
-| CI | 0.8200 ± 0.0067 |
-| Accuracy | 0.8498 ± 0.0121 |
-| F1 | 0.8547 ± 0.0118 |
-| AUROC | 0.9196 ± 0.0046 |
-
----
-
 ## Public Release Scope
 
 This repository currently includes:
