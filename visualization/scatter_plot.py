@@ -91,25 +91,6 @@ legend = ax_main.legend(
 legend.get_frame().set_linewidth(1.5)
 
 spearman_r, _ = spearmanr(df['true_reg'], df['pred_reg'])
-metrics_text = f'$r$ = {spearman_r:.4f}'
-ax_main.text(
-    0.03,
-    0.86,
-    metrics_text,
-    transform=ax_main.transAxes,
-    fontsize=14,
-    verticalalignment='top',
-    bbox=dict(boxstyle='round,pad=0.5', facecolor='white', alpha=0.95, edgecolor='black', linewidth=1.5),
-)
-
-# Small colorbar inside the main plot.
-cbar_ax = fig.add_axes([0.62, 0.3, 0.1, 0.02])
-cbar = plt.colorbar(scatter, cax=cbar_ax, orientation='horizontal')
-cbar.set_label('Prediction Accuracy', fontsize=10, fontweight='bold', labelpad=8)
-cbar.ax.tick_params(labelsize=9, width=1, length=9)
-cbar.outline.set_linewidth(1)
-cbar.set_ticks([0, 1])
-cbar.set_ticklabels(['Low', 'High'])
 
 # Marginal distribution for true values.
 bins = 30
