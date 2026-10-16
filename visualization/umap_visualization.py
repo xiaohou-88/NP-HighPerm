@@ -35,15 +35,7 @@ def load_umap_coordinates(input_dir):
 
         df = pd.read_csv(csv_path)
         missing_columns = {"UMAP1", "UMAP2"} - set(df.columns)
-        if missing_columns:
-            missing_text = ", ".join(sorted(missing_columns))
-            raise ValueError(f"{csv_path.name} is missing required columns: {missing_text}")
-
-        tables[modality] = df
-
-    if not tables:
-        expected = ", ".join(f"umap_coordinates_{name}.csv" for name in MODALITIES)
-        raise FileNotFoundError(f"No UMAP coordinate CSV files found in {input_dir}. Expected files: {expected}")
+       
 
     return tables
 
